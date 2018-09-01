@@ -65,3 +65,11 @@ typings/
 
 # next.js build output
 .next
+
+# intelliJ
+newmad-front.iml
+.idea
+
+# sass
+/style/css/app.css
+/style/css/app.css.map
