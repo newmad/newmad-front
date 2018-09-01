@@ -28,7 +28,6 @@ class CardList {
   updateLike(isSuccess, data){
     const {id, like} = JSON.parse(data)
     const updatedBtn = qs(`#likeId-${id}`, this.cardListEl)
-    console.log(updatedBtn)
     updatedBtn.innerText = like;
   }
   getData(isSuccess, data) {
