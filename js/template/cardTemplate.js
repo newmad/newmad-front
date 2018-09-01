@@ -6,13 +6,15 @@ export const cardTemplate = cardArr => {
       <div class="card">
         <img class="card__thumbnail" src="${c.img}">
         <div class="card__desc-wrapper">
-          <p class="desc-title">${c.title}</p>
-          <p class="desc-address"> ${c.address}</p>
-          <p class="desc-time"> ${c.holiday}</p>
-          <p class="desc-phone">${c.phone}</p>
-          <button data-like="like" class="like-button">❤️
-            <span id="likeId-${c.id}" data-counts="${c.like}" data-like="like" class="like-count">${c.like}</span>
-          </button>
+          <div class="desc-box">
+            <p class="desc-title">${c.title}</p>
+            <p class="desc-address"> ${c.address}</p>
+            <p class="desc-time"> ${c.holiday}</p>
+            <p class="desc-phone">${c.phone}</p>
+            <button data-like="like" class="like-button">❤️
+              <span id="likeId-${c.id}" data-counts="${c.like}" data-like="like" class="like-count">${c.like}</span>
+            </button>
+          </div>
         </div>
       </div>
       </a>
