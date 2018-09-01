@@ -4,4 +4,5 @@ export const URL = {
   card: main,
   place: `${main}/place`,
   like:  `${main}/like`,
+  search:  `${main}/search`,
 };

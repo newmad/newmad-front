@@ -1,11 +1,32 @@
 import { qs, $on } from "../helper/helper.js";
 
 class FormView {
-  constructor({ searchFormSelector, searchInputSelector, wrapper, ajax, url }) {
-    Object.assign(this, { ajax, url });
-    this.searchFormSelector = qs(searchFormSelector);
-    this.searchInputSelector = qs(searchInputSelector);
-    this.wrapperSelector = qs(wrapperSelector);
+  constructor({ searchFormSelector, searchInputSelector, wrapperSelector, ajax, url, renderHelper }) {
+    Object.assign(this, { ajax, url, renderHelper });
+    this.searchFormEl = qs(searchFormSelector);
+    this.searchInputEl = qs(searchInputSelector);
+    this.wrapperEl = qs(wrapperSelector);
+    this.bindEvents();
+    this.notifyKeyWordSubmit = null
+
+  }
+  bindEvents(){
+    $on(this.searchFormEl, "submit", e => this.hanldeSubmit(e))
+  }
+  hanldeSubmit(e){
+    e.preventDefault();
+    const keyword = this.searchInputEl.value.trim();
+    keyword && this.handlePost(keyword)
+  }
+  handlePost(keyword){
+    this.ajax(`${this.url.search}?keyword=${encodeURI(keyword, 'UTF-8')}`, this.getKeyWord.bind(this));
+  }
+  getKeyWord(isSuccess, data){
+     this.notifyKeyWordSubmit(JSON.parse(data));
+     this.clearInput();
+  }
+  clearInput(){
+    this.searchInputEl.value = "";
   }
 }
 
