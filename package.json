@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel js -d es5Js",
-    "lint": "./node_modules/.bin/eslint --init",
-    "sass": "node-sass --output-style expanded style/sass --output style/css",
     "dev": "webpack-dev-server --open --progress --port 7777",
     "build": "webpack"
   },
@@ -28,8 +25,7 @@
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "lite-server": "^2.4.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",

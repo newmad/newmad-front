@@ -73,3 +73,13 @@ newmad-front.iml
 # sass
 /style/css/app.css
 /style/css/app.css.map
+
+# webpack
+/*.png
+/*.svg
+/bundle.detailPage.js
+/bundle.detailPage.js.map
+/bundle.mainPage.js
+/bundle.mainPage.js.map
+/detail.html
+/index.html
