@@ -8,6 +8,12 @@
   border-bottom: 1px solid #ced3d6;
 }
 
+.header__navigation {
+  & a, img {
+    cursor: pointer;
+  }
+}
+
 .navigation-btn {
   font-size: 17px;
   font-weight: bold;
