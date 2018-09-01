@@ -33,12 +33,13 @@
 
 .card {
   width: 256px;
-  height: 368px;
+  //height: 368px;
   border-radius: 8px;
   box-shadow: 0 2px 4px 0 rgba(41, 42, 43, 0.2);
   background-color: #ffffff;
   border: solid 1px #a9afb3;
   margin-bottom: 32px;
+  padding-bottom: 10px;
 }
 
 .desct-title,
