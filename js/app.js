@@ -1,15 +1,26 @@
-var querySelector = document.querySelector.bind(document);
-var weatherList = querySelector('.weather__list');
-var weatherItemTemplate = querySelector('.weather__item--template');
+import { $on } from "./helper/helper.js";
+import CardList from "./View/CardList.js";
+import { cardTemplate } from "./template/cardTemplate.js";
 
-weather(function(status, resData){
+$on(document, "DOMContentLoaded", () => {
+  const cardList = new CardList({
+    cardListSelector: ".card-list",
+    cardTemplate,
+  });
+});
+
+var querySelector = document.querySelector.bind(document);
+var weatherList = querySelector(".weather__list");
+var weatherItemTemplate = querySelector(".weather__item--template");
+
+weather(function(status, resData) {
   for (var i = 0, len = resData.length; i < len; i += 1) {
     var weatherItem = resData[i];
 
     var weatherItemTemplateClone = weatherItemTemplate.cloneNode(true);
-    weatherItemTemplateClone.querySelector('.weather__item--title').textContent = weatherItem;
+    weatherItemTemplateClone.querySelector(".weather__item--title").textContent = weatherItem;
     weatherItemTemplateClone.hidden = false;
-    weatherItemTemplateClone.classList.add('weather__item');
+    weatherItemTemplateClone.classList.add("weather__item");
 
     weatherItemTemplateClone.onclick = function(e) {
       alert(e.target.querySelector('.weather__item--title').textContent);

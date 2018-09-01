@@ -10,8 +10,19 @@
 </head>
 
 <body>
-
-  <!--template-->
+  <header class="header">
+    <nav class="header__navigation">
+      <h2 class="header__nav">서비스 이름 </h2>
+      <a class="navigation-btn">장소 제보하기</a>
+    </nav>
+    <div class="form__wrapper">
+      <h2 class="header__weather-comment">오늘 날씨 so Hot :D </h2>
+      <form class="header__form">
+        <input type="text">
+        <button class="search-button"></button>
+      </form>
+    </div>
+  </header>
   <div class="weather__item--template" hidden>
     <span class="weather__item--title"></span>
   </div>
@@ -20,10 +31,31 @@
   <div class="weather__container">
     <ul class="weather__list"></ul>
   </div>
+  <div class="card-list__wrapper">
+    <h2 class="card-list-title">전체 140개 리스트</h2>
+    <ul class="card-list">
+      <!-- <li class="card">
+        <img class="card__thumbnail" src="./assets/images/osulloc.jpg" alt="thumbnail">
+        <div class="card__desc-wrapper">
+          <p class="desc-title">오설록 티 뮤지엄</p>
+          <p class="desc-address"> 제주특별자치도 서귀포시 안덕면</p>
+          <p class="desc-time"> 제주특별자치도 서귀포시 안덕면</p>
+          <p class="desc-phone"> 제주특별자치도 서귀포시 안덕면</p>
+          <button class="like-button">❤️
+            <span class="like-count">25</span>
+          </button>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+
+
+
+  <!--template-->
 
   <script src="./api/common.js"></script>
   <script src="./api/weather.js"></script>
-  <script src="./js/app.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 
 </html>
