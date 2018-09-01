@@ -1,6 +1,7 @@
 import { $on } from "./helper/helper.js";
 import CardList from "./View/CardList.js";
 import { cardTemplate } from "./template/cardTemplate.js";
+import { requestGET } from "../api/common.js";
 
 $on(document, "DOMContentLoaded", () => {
   const cardList = new CardList({
@@ -41,11 +42,11 @@ weather(function(status, resData) {
     weatherItemTemplateClone.classList.add("weather__item");
 
     weatherItemTemplateClone.onclick = function(e) {
-      alert(e.target.querySelector('.weather__item--title').textContent);
+      alert(e.target.querySelector(".weather__item--title").textContent);
     };
 
-    var weatherChild = document.createElement('LI');
-    weatherChild.classList.add('weather__child');
+    var weatherChild = document.createElement("LI");
+    weatherChild.classList.add("weather__child");
     weatherChild.appendChild(weatherItemTemplateClone);
     weatherList.appendChild(weatherChild);
   }
