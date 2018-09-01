@@ -12,6 +12,7 @@ class FormView {
   }
   bindEvents(){
     $on(this.searchFormEl, "submit", e => this.hanldeSubmit(e))
+    $on(document.body, "click", () => this.clearInput());
   }
   hanldeSubmit(e){
     e.preventDefault();
