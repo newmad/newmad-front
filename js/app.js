@@ -1,4 +1,4 @@
-import { $on } from "./heloer/helper.js";
+import { $on } from "./helper/helper.js";
 import CardList from "./View/CardList.js";
 import { cardTemplate } from "./template/cardTemplate.js";
 
@@ -8,6 +8,7 @@ $on(document, "DOMContentLoaded", () => {
     cardTemplate,
   });
 });
+
 var querySelector = document.querySelector.bind(document);
 var weatherList = querySelector(".weather__list");
 var weatherItemTemplate = querySelector(".weather__item--template");
