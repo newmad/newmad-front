@@ -1,0 +1,4 @@
+.wrapper {
+  @include padding-side($size-3);
+  box-sizing: border-box;
+}
