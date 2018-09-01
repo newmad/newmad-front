@@ -9,6 +9,8 @@ import {cardTemplate} from "./template/cardTemplate.js";
 import {requestGET} from "../api/common.js";
 import {URL} from "./URL.js";
 import search from '../api/search';
+import snowTemplate from './template/snow.js'
+
 
 // 아이콘 이미지
 import icon0 from '../assets/images/icon-0.png'
@@ -25,6 +27,9 @@ import icon10 from '../assets/images/icon-10.png'
 import icon11 from '../assets/images/icon-11.png'
 import icon12 from '../assets/images/icon-12.png'
 import icon13 from '../assets/images/icon-13.png'
+
+import thunderStorm from './weatherBG/thunderstorm';
+import rainy from './weatherBG/rainy';
 
 const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12, icon13];
 
@@ -61,6 +66,15 @@ const countEL = querySelector('.card-counts');
 
 
 const weatherItemTemplate = querySelector(".weather__item--template");
+const formWrapper = querySelector('.form__wrapper');
+
+const weatherObj = {
+  thunderStorm,
+  rainy,
+  snowTemplate,
+};
+
+formWrapper.insertAdjacentHTML("beforeend", weatherObj.rainy);
 
 
 weather((status, resData) => {
