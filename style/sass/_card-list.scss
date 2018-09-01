@@ -11,7 +11,7 @@
 }
 
 .card__thumbnail {
-  width: 256px;
+  width: 100%;
   height: 135px;
   object-fit: cover;
 }
@@ -22,18 +22,21 @@
   @include padding-side($size-1);
 }
 .card-list-item {
-  width: 33.33%;
+
+  display: inline-block;
+  float: left;
+  width: 256px;
+
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .card-list {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .card {
-  width: 256px;
-  //height: 368px;
   border-radius: 8px;
   box-shadow: 0 2px 4px 0 rgba(41, 42, 43, 0.2);
   background-color: #ffffff;
@@ -42,14 +45,26 @@
   padding-bottom: 10px;
 }
 
-.desct-title,
-.desc-time,
-.desc-phone {
-  font-size: 16px;
+.desc-title {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #292a2b;
 }
 
-.desc-title {
-  margin-bottom: 38px;
+.desc-time,
+.desc-phone,
+.desc-address {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #878d91;
 }
 
 .like-button {

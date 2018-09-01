@@ -7,7 +7,7 @@
     "dev": "lite-server",
     "babel": "babel js -d es5Js",
     "lint": "./node_modules/.bin/eslint --init",
-    "sass": "node-sass --output-style expanded style/sass --output style/css --watch"
+    "sass": "node-sass --output-style expanded style/sass --output style/css"
   },
   "repository": {
     "type": "git",
