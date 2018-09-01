@@ -1,5 +1,5 @@
 import { $on, qs } from "../helper/helper.js";
-
+import animations  from '../helper/animation.js';
 
 
 class CardList {
@@ -49,6 +49,13 @@ class CardList {
     const renderData = Object.values(data);
     this.countsEl.innerText = renderData.length;
     this.cardListEl.innerHTML = this.cardTemplate(Object.values(renderData));
+    const buttonTemplate = `<div id="top-btn">Back to Top &#x2191</div>`
+    this.cardListEl.insertAdjacentHTML('afterend', buttonTemplate);
+    $on(qs('#top-btn'), "click", e => this.handleTopBtnClicked(e));
+  }
+  handleTopBtnClicked(){
+    
+    animations.scrollTop(window, 0, 2)
   }
 }
 
