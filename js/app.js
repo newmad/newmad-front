@@ -74,7 +74,7 @@ const weatherObj = {
   snowTemplate,
 };
 
-formWrapper.insertAdjacentHTML("beforeend", weatherObj.rainy);
+formWrapper.insertAdjacentHTML("beforeend", weatherObj.thunderStorm);
 
 
 weather((status, resData) => {
