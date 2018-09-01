@@ -43,6 +43,8 @@ function place(location, callback) {
   });
 }
 
+export default place;
+
 // place({}, function(status, resData) {
 //   console.log(resData);
 // });

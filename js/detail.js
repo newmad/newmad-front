@@ -1,29 +1,30 @@
+import '../style/sass/app.scss';
 import detail from '../api/detail.js';
 
-var querySelector = document.querySelector.bind(document);
+const querySelector = document.querySelector.bind(document);
 
-var placeTitle = querySelector('.place__title');
-var placeLocation = querySelector('.place__location');
-var placeLikeNum = querySelector('.place__like--num');
-var placePicture = querySelector('.place__picture');
-var placeDescription = querySelector('.place__description');
+const placeTitle = querySelector('.place__title');
+const placeLocation = querySelector('.place__location');
+const placeLikeNum = querySelector('.place__like--num');
+const placePicture = querySelector('.place__picture');
+const placeDescription = querySelector('.place__description');
 
-var placeAddress = querySelector('.place__info--address');
-var placePhone = querySelector('.place__info--phone');
-var placeHoliday = querySelector('.place__info--holiday');
-var placePrice = querySelector('.place__info--price');
-var placePark = querySelector('.place__info--park');
-var placeCategory = querySelector('.place__info--category');
+const placeAddress = querySelector('.place__info--address');
+const placePhone = querySelector('.place__info--phone');
+const placeHoliday = querySelector('.place__info--holiday');
+const placePrice = querySelector('.place__info--price');
+const placePark = querySelector('.place__info--park');
+const placeCategory = querySelector('.place__info--category');
 
-var id = window.location.search.substr(1).split('=')[1];
+const id = window.location.search.substr(1).split('=')[1];
 
-detail(id, function (status, resData) {
+detail(id, (status, resData) => {
   resData = JSON.parse(resData);
 
-  var title = Object.keys(resData)[0];
-  var obj = resData[title];
+  const title = Object.keys(resData)[0];
+  const obj = resData[title];
 
-  var {title, address, desc, img, like, category, holiday, parking, phone, price, id, 'weather-id' : weatherID} = obj;
+  const {address, desc, img, like, category, holiday, parking, phone, price, id, 'weather-id' : weatherID} = obj;
 
   placeTitle.textContent = title;
   placeLocation.textContent = address;

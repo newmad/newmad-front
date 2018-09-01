@@ -30,3 +30,5 @@ function weather(callback) {
 // weather(function(status, res) {
 //   console.log(res);
 // });
+
+export default weather;
