@@ -38,6 +38,6 @@ function place(location, callback) {
   });
 }
 
-place({}, function(status, resData) {
-  console.log(resData);
-});
+// place({}, function(status, resData) {
+//   console.log(resData);
+// });

@@ -23,6 +23,6 @@ function weather(callback) {
   });
 }
 
-weather(function(status, res) {
-  console.log(res);
-});
+// weather(function(status, res) {
+//   console.log(res);
+// });
