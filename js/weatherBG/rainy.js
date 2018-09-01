@@ -1,4 +1,4 @@
-import '../../style/sass/weather/_thunderstorm.scss';
+import '../../style/sass/weather/_rainy.scss';
 
 export default `
 <svg class="defs-svg" viewBox="0 0 2 500">
@@ -32,4 +32,5 @@ export default `
         <rect fill="url(#rain)" width="100%" height="100%"/>
     </svg>
 </div>
-`;
+
+`
