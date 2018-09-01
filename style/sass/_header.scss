@@ -26,6 +26,7 @@
 }
 
 .form__wrapper {
+  position: relative;
   height: 278px;
   display: flex;
   justify-content: center;
@@ -36,9 +37,11 @@
 
 .header__weather-comment {
   margin-bottom: 22px;
+  z-index: 3000;
 }
 
 .search__form {
+  z-index: 3000;
   position: relative;
   display: flex;
   justify-content: center;

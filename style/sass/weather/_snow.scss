@@ -1,13 +1,13 @@
 .snow-container {
   position: absolute;
-  height: 500px;
+  height: 278px;
   width: 100%;
   max-width: 100%;
   top: 0;
   overflow: hidden;
   z-index: 2;
   pointer-events: none;
-  background-image: linear-gradient(-180deg, #B4E4F6 0%, #A2BEE3 100%);
+  background-image: linear-gradient(-180deg, #CCE2FE 0%, #A2BEE3 100%);
 }
 
 .snow {
@@ -23,7 +23,7 @@
   bottom: 0;
   left: 0;
   pointer-events: none;
-  transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, 0%, 0);
   animation: snow linear infinite;
 
   &.foreground {

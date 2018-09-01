@@ -1,5 +1,5 @@
 import { qs, $on } from "../helper/helper.js";
-
+import {snowTemplate} from '../template/snow.js';
 class FormView {
   constructor({ searchFormSelector, searchInputSelector, wrapperSelector, ajax, url, renderHelper }) {
     Object.assign(this, { ajax, url, renderHelper });
@@ -8,7 +8,7 @@ class FormView {
     this.wrapperEl = qs(wrapperSelector);
     this.bindEvents();
     this.notifyKeyWordSubmit = null
-
+    this.addSnow();
   }
   bindEvents(){
     $on(this.searchFormEl, "submit", e => this.hanldeSubmit(e))
@@ -28,6 +28,9 @@ class FormView {
   }
   clearInput(){
     this.searchInputEl.value = "";
+  }
+  addSnow(){
+    this.wrapperEl.insertAdjacentHTML('beforeend', snowTemplate)
   }
 }
 

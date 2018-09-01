@@ -40,7 +40,7 @@ $on(document, "DOMContentLoaded", () => {
   
 
   const form = new FormView({
-    wrapperSelector: 'form__wrapper',
+    wrapperSelector: '.form__wrapper',
     searchInputSelector: '.search-input',
     searchFormSelector: '.search__form',
     ajax: requestGET,
