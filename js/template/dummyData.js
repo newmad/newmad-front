@@ -1,0 +1,42 @@
+export const dummyCardData = [
+  {
+    image: "./assets/images/osulloc.jpg",
+    title: "제주특별자치도 서귀포시 안덕면",
+    address: "제주특별자치도 서귀포시 안덕면",
+    time: "6시 종료",
+    phone: "010-3412-1234",
+    likes: 20,
+  },
+  {
+    image: "./assets/images/osulloc.jpg",
+    title: "제주특별자치도 서귀포시 안덕면",
+    address: "제주특별자치도 서귀포시 안덕면",
+    time: "6시 종료",
+    phone: "010-3412-1234",
+    likes: 20,
+  },
+  {
+    image: "./assets/images/osulloc.jpg",
+    title: "제주특별자치도 서귀포시 안덕면",
+    address: "제주특별자치도 서귀포시 안덕면",
+    time: "6시 종료",
+    phone: "010-3412-1234",
+    likes: 20,
+  },
+  {
+    image: "./assets/images/osulloc.jpg",
+    title: "제주특별자치도 서귀포시 안덕면",
+    address: "제주특별자치도 서귀포시 안덕면",
+    time: "6시 종료",
+    phone: "010-3412-1234",
+    likes: 20,
+  },
+  {
+    image: "./assets/images/osulloc.jpg",
+    title: "제주특별자치도 서귀포시 안덕면",
+    address: "제주특별자치도 서귀포시 안덕면",
+    time: "6시 종료",
+    phone: "010-3412-1234",
+    likes: 20,
+  },
+];
