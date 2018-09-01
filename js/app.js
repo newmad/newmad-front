@@ -28,6 +28,7 @@ import icon13 from '../assets/images/icon-13.png'
 
 import thunderStorm from './weatherBG/thunderstorm';
 import rainy from './weatherBG/rainy';
+import mist from './weatherBG/mist';
 
 const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12, icon13];
 
@@ -68,10 +69,11 @@ const formWrapper = querySelector('.form__wrapper');
 
 const weatherObj = {
   thunderStorm,
-  rainy
+  rainy,
+  mist,
 };
 
-formWrapper.insertAdjacentHTML("beforeend", weatherObj.thunderStorm);
+formWrapper.insertAdjacentHTML("beforeend", weatherObj.mist);
 
 
 weather((status, resData) => {
