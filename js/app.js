@@ -30,7 +30,11 @@ import icon13 from '../assets/images/icon-13.png'
 
 import thunderStorm from './weatherBG/thunderstorm';
 import rainy from './weatherBG/rainy';
+<<<<<<< HEAD
 import snow from './weatherBG/snow';
+=======
+import mist from './weatherBG/mist';
+>>>>>>> f57b07ec230ed9b09c6cc2a3050cfc7456c551f0
 
 const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12, icon13];
 

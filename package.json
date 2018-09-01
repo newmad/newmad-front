@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --progress --port 3000",
+    "release": "webpack-dev-server --open --progress --port 3000 --host 0.0.0.0",
     "build": "webpack"
   },
   "repository": {
