@@ -1,0 +1,89 @@
+.place__container {
+  padding-top: 82px;
+  width: 788px;
+  background-color: white;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.place__title {
+  display: inline-block;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #292a2b;
+}
+
+.place__location {
+  display: inline-block;
+  width: 100%;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #878d91;
+
+  margin-top: 24px;
+}
+
+.place__like--btn {
+  display: inline-block;
+  width: 142px;
+  height: 56px;
+  border-radius: 10px;
+  background: #f1f5f5 url("../../assets/images/icon-heart-medium.png") no-repeat 18px;
+
+  margin-top: 34px;
+
+  padding-left: 49px;
+  line-height: 56px;
+
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #a9afb3;
+
+  cursor: pointer;
+}
+
+.place__like--num {
+  color: #4d5256;
+}
+
+.place__picture {
+  width: 788px;
+  height: 414px;
+  margin-top: 65px;
+}
+
+.place__info--key {
+  font-weight: bold;
+}
+
+.place__info--table {
+  border-spacing: 20px;
+  padding: 10px;
+  width: 50%
+}
+
+.place__description {
+  margin-top: 61px;
+  margin-bottom: 158px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: #4d5256;
+}
