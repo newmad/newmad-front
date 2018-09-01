@@ -1,14 +1,16 @@
 import { $on, qs } from "../helper/helper.js";
 import { dummyCardData } from "../template/dummyData.js";
 
+
+
 class CardList {
-  constructor({ cardListSelector, cardTemplate, ajax, placeUrl }) {
-    Object.assign(this, { cardTemplate, ajax, placeUrl });
+  constructor({ cardListSelector, cardTemplate, ajax, url }) {
+    Object.assign(this, { cardTemplate, ajax, url });
     this.cardListEl = qs(cardListSelector);
     this.init();
   }
   init() {
-    this.ajax(this.placeUrl, this.getData.bind(this));
+    this.ajax(this.url.place, this.getData.bind(this));
     this.bindEvents();
   }
   bindEvents() {
@@ -16,12 +18,18 @@ class CardList {
   }
   handleCliked({ target }) {
     const listItem = target.closest('li')
-    const weatherID = listItem.id;
-    if(target.id ==='like-btn') return this.handleLikeBtn(weatherID)
-    window.open(`/detail.html?id=${weatherID}`)
+    const id = listItem.id;
+    if(target.dataset.like ==='like') return this.handleLikeBtn(id)
+    else window.open(`/detail.html?id=${id}`)
   }
   handleLikeBtn(id){
-    
+    this.ajax(`${this.url.like}?keyword=${id}`, this.updateLike.bind(this))
+  }
+  updateLike(isSuccess, data){
+    const {id, like} = JSON.parse(data)
+    const updatedBtn = qs(`#likeId-${id}`, this.cardListEl)
+    console.log(updatedBtn)
+    updatedBtn.innerText = like;
   }
   getData(isSuccess, data) {
     if (isSuccess) this.render(JSON.parse(data));
