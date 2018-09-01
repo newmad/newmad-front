@@ -1,3 +1,5 @@
+import detail from '../api/detail.js';
+
 var querySelector = document.querySelector.bind(document);
 
 var placeTitle = querySelector('.place__title');
@@ -13,7 +15,11 @@ var placePrice = querySelector('.place__info--price');
 var placePark = querySelector('.place__info--park');
 var placeCategory = querySelector('.place__info--category');
 
-detail({}, function (status, resData) {
+var id = window.location.search.substr(1).split('=')[1];
+
+detail(id, function (status, resData) {
+  resData = JSON.parse(resData);
+
   var title = Object.keys(resData)[0];
   var obj = resData[title];
 
@@ -31,6 +37,5 @@ detail({}, function (status, resData) {
   placePrice.textContent = price;
   placePark.textContent = parking;
   placeCategory.textContent = category;
-
 
 });
