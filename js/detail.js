@@ -1,8 +1,10 @@
 import '../style/sass/app.scss';
 import detail from '../api/detail.js';
-
+import {requestGET} from '../api/common.js';
+import {URL} from "./URL.js";
 const querySelector = document.querySelector.bind(document);
 
+const placeBtn = querySelector('.place__like--num');
 const placeTitle = querySelector('.place__title');
 const placeLocation = querySelector('.place__location');
 const placeLikeNum = querySelector('.place__like--num');
@@ -30,7 +32,7 @@ detail(id, (status, resData) => {
   placeLocation.textContent = address;
   placeLikeNum.textContent = like;
   placeLikeNum.dataset.counts = like;
-  placeLikeNum.dataset.like = 'like';
+  placeLikeNum.dataset.id = id;
   placeDescription.textContent = desc;
   placePicture.src = img;
 
@@ -44,4 +46,15 @@ detail(id, (status, resData) => {
 });
 
 
+const rollBack = (btn)=>{
+  btn.innerText = Number(btn.innerText-1);
+  btn.dataset.counts = Number(counts-1);
+}
 
+placeBtn.addEventListener('click', ({target})=>{
+  const countsEl = querySelector('.place__like--num')
+  const counts = Number(countsEl.dataset.counts)+1;
+  countsEl.innerText = counts;
+  countsEl.dataset.counts = counts;
+  requestGET(`${URL.like}?keyword=${countsEl.dataset.id}`, ()=>{})
+})
