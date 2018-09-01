@@ -1,4 +1,4 @@
-export default`<div class="snow-container">
+ const snow = `<div class="snow-container">
   <div class="snow foreground"></div>
   <div class="snow foreground layered"></div>
   <div class="snow middleground"></div>
@@ -7,3 +7,4 @@ export default`<div class="snow-container">
   <div class="snow background layered"></div>
 </div>`;
 
+export default snow;
