@@ -4,13 +4,19 @@
 	"sources": [
 		"../sass/app.scss",
 		"../sass/_mixin.scss",
-		"../sass/_base.scss"
+		"../sass/_variable.scss",
+		"../sass/_base.scss",
+		"../sass/_header.scss",
+		"../sass/_wrapper.scss"
 	],
 	"sourcesContent": [
-		"@import \"_mixin.scss\";\n@import \"_base.scss\";\n",
+		"@import \"_mixin.scss\";\n@import \"_variable.scss\";\n@import \"_base.scss\";\n@import \"header.scss\";\n@import \"_wrapper.scss\";\n",
 		"@mixin padding-side($side) {\n  padding-left: $side;\n  padding-right: $side;\n}\n",
-		"body {\n  margin: 0;\n}\nh1,\nh2,\nh3 {\n  margin: 0;\n}\n\nul {\n  padding-left: 0;\n}\nli {\n  list-style: none;\n}\n"
+		"$size-1: 30px;\n$size-3: 114px;\n",
+		"body {\n  margin: 0;\n}\nh1,\nh2,\nh3 {\n  margin: 0;\n}\n\nul {\n  padding-left: 0;\n}\nli {\n  list-style: none;\n}\n",
+		".header__navigation {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: 70px;\n  @include padding-side($size-3);\n  box-sizing: border-box;\n  border-bottom: 1px solid #ced3d6;\n}\n\n.form__wrapper {\n  height: 278px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  border-bottom: 1px solid #ced3d6;\n}\n\n.header__weather-comment {\n  margin-bottom: 22px;\n}\n\n.header__form {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  border-bottom: 1px#ced3d6;\n  border-top: 1px#ced3d6;\n  & input {\n    width: 545px;\n    height: 66px;\n    border-radius: 33px;\n    border: solid 2px #e1e4e6;\n    box-sizing: border-box;\n    padding-left: 65px;\n    font-size: 20px;\n  }\n}\n\n.search-button {\n  position: absolute;\n  background: url(../../assets/images/search-icons.png);\n  width: 30px;\n  height: 30px;\n  left: 23px;\n  top: 19px;\n  border: none;\n}\n",
+		".wrapper {\n  @include padding-side($size-3);\n  box-sizing: border-box;\n}\n"
 	],
 	"names": [],
-	"mappings": "AEAA,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;CACV;;AACD,AAAA,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACD,MAAM,EAAE,CAAC;CACV;;AAED,AAAA,EAAE,CAAC;EACD,YAAY,EAAE,CAAC;CAChB;;AACD,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;CACjB"
+	"mappings": "AGAA,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;CACV;;AACD,AAAA,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACD,MAAM,EAAE,CAAC;CACV;;AAED,AAAA,EAAE,CAAC;EACD,YAAY,EAAE,CAAC;CAChB;;AACD,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;CACjB;;ACdD,AAAA,mBAAmB,CAAC;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,IAAI;EHHZ,YAAY,ECAL,KAAK;EDCZ,aAAa,ECDN,KAAK;EEKZ,UAAU,EAAE,UAAU;EACtB,aAAa,EAAE,iBAAiB;CACjC;;AAED,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,MAAM;EACtB,aAAa,EAAE,iBAAiB;CACjC;;AAED,AAAA,wBAAwB,CAAC;EACvB,aAAa,EAAE,IAAI;CACpB;;AAED,AAAA,aAAa,CAAC;EACZ,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;EACtB,aAAa,EAAE,GAAG,CAAA,OAAO;EACzB,UAAU,EAAE,GAAG,CAAA,OAAO;CAUvB;;AAhBD,AAOE,aAPW,CAOT,KAAK,CAAC;EACN,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,iBAAiB;EACzB,UAAU,EAAE,UAAU;EACtB,YAAY,EAAE,IAAI;EAClB,SAAS,EAAE,IAAI;CAChB;;AAGH,AAAA,cAAc,CAAC;EACb,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,yCAAyC;EACrD,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,IAAI,EAAE,IAAI;EACV,GAAG,EAAE,IAAI;EACT,MAAM,EAAE,IAAI;CACb;;ACjDD,AAAA,QAAQ,CAAC;EJCP,YAAY,ECAL,KAAK;EDCZ,aAAa,ECDN,KAAK;EGCZ,UAAU,EAAE,UAAU;CACvB"
 }
