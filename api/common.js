@@ -1,7 +1,7 @@
-var API_URL = '';
+var API_URL = "";
 
-var MESSAGE_SYS_FAIL = '접근에 실패했습니다.';
-var MESSAGE_NETWORK_FAIL = '인터넷 환경을 확인해주세요.';
+var MESSAGE_SYS_FAIL = "접근에 실패했습니다.";
+var MESSAGE_NETWORK_FAIL = "인터넷 환경을 확인해주세요.";
 
 /**
  * @param url
@@ -16,7 +16,7 @@ function requestGET(url, ackFunc) {
     return false;
   } else {
     var request = new XMLHttpRequest();
-    request.open('GET', url, true);
+    request.open("GET", url, true);
     // request.setRequestHeader('Api-Version', '1.0');
     request.send();
 
@@ -33,7 +33,7 @@ function requestGET(url, ackFunc) {
           ackFunc(true, JSON.parse(request.response));
         }
       } else {
-        alert('연결에 실패했습니다.');
+        alert("연결에 실패했습니다.");
         ackFunc(false, null);
       }
     };
@@ -55,8 +55,8 @@ function requestPOST(url, data, ackFunc) {
     return false;
   } else {
     var request = new XMLHttpRequest();
-    request.open('POST', url, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
     // request.setRequestHeader('Api-Version', '1.0');
     request.send(JSON.stringify(data));
 
@@ -66,11 +66,11 @@ function requestPOST(url, data, ackFunc) {
     };
 
     request.onload = function() {
-      if ((request.status >= 200) && (request.status < 400)) {
+      if (request.status >= 200 && request.status < 400) {
         if (request.status === 204) {
           ackFunc(true, null);
         } else {
-          if (typeof request.response !== 'object') {
+          if (typeof request.response !== "object") {
             ackFunc(true, JSON.parse(request.response));
           } else {
             ackFunc(true, request.response);
@@ -99,8 +99,8 @@ function requestDELETE(url, data, ackFunc) {
     return false;
   } else {
     var request = new XMLHttpRequest();
-    request.open('DELETE', url, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.open("DELETE", url, true);
+    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
     // request.setRequestHeader('Api-Version', '1.0');
 
     if (data) {
@@ -115,7 +115,7 @@ function requestDELETE(url, data, ackFunc) {
     };
 
     request.onload = function() {
-      if ((request.status >= 200) && (request.status < 400)) {
+      if (request.status >= 200 && request.status < 400) {
         if (request.status === 204) {
           ackFunc(true, null);
         } else {
@@ -144,8 +144,8 @@ function requestPUT(url, data, ackFunc) {
     return false;
   } else {
     var request = new XMLHttpRequest();
-    request.open('PUT', url, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.open("PUT", url, true);
+    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
     // request.setRequestHeader('Api-Version', '1.0');
 
     if (data) {
@@ -160,7 +160,7 @@ function requestPUT(url, data, ackFunc) {
     };
 
     request.onload = function() {
-      if ((request.status >= 200) && (request.status < 400)) {
+      if (request.status >= 200 && request.status < 400) {
         if (request.status === 204) {
           ackFunc(true, null);
         } else {
@@ -174,4 +174,4 @@ function requestPUT(url, data, ackFunc) {
   }
 }
 
-export {requestGET, requestPUT, requestDELETE, requestPOST};
+export { requestGET, requestPUT, requestDELETE, requestPOST };
