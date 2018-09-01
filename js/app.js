@@ -66,6 +66,7 @@ const weatherList = querySelector(".weather__list");
 const cardListEL = querySelector('.card-list');
 const countEL = querySelector('.card-counts');
 
+const headerComment = querySelector('.header__weather-comment');
 
 const weatherItemTemplate = querySelector(".weather__item--template");
 const formWrapper = querySelector('.form__wrapper');
@@ -77,7 +78,19 @@ const weatherObj = {
   mist,
 };
 
-formWrapper.insertAdjacentHTML("beforeend", weatherObj.snow);
+const weatherMsg = {
+  thunderStorm : '천둥번개',
+  rainy : '비오는 날',
+  snow : '눈오는 날',
+  mist : '안개낀 날',
+};
+
+const randomKey = Math.floor(Math.random() * Object.keys(weatherObj).length);
+const randomBG = Object.keys(weatherObj)[randomKey];
+
+headerComment.textContent = `오늘 날씨는 ${weatherMsg[randomBG]}입니다.`;
+
+formWrapper.insertAdjacentHTML("beforeend", weatherObj[randomBG]);
 
 
 weather((status, resData) => {
