@@ -10,7 +10,7 @@ $on(document, "DOMContentLoaded", () => {
     cardListSelector: ".card-list",
     cardTemplate,
     ajax: requestGET,
-    url: URL.place,
+    placeUrl: URL.place,
   });
   // const form = new FormView({
   //   'form__wrapper'
