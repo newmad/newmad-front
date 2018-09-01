@@ -1,4 +1,4 @@
-import { $on, qs } from "../heloer/helper.js";
+import { $on, qs } from "../helper/helper.js";
 import { dummyCardData } from "../template/dummyData.js";
 
 class CardList {
