@@ -28,6 +28,8 @@
   flex-wrap: wrap;
 }
 
+
+
 .card {
   position: relative;
 
@@ -55,15 +57,11 @@ li:nth-of-type(3n + 0) {
   }
 }
 
-.desc-title {
-  font-size: 18px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #292a2b;
+.desc-box {
+  height: 180px;
 }
+
+
 
 .desc-time,
 .desc-phone,
@@ -75,8 +73,8 @@ li:nth-of-type(3n + 0) {
   line-height: normal;
   letter-spacing: normal;
   color: #878d91;
-
-  height: 45px;
+  margin: 0;
+  margin-bottom: 10px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -89,4 +87,16 @@ li:nth-of-type(3n + 0) {
   height: 36px;
   border-radius: 10px;
   background-color: #f1f5f5;
+}
+
+.desc-title {
+  font-size: 18px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #292a2b;
 }
