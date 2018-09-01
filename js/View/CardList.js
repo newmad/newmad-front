@@ -49,16 +49,10 @@ class CardList {
     const renderData = Object.values(data);
     const counts = renderData.length
     this.countsEl.innerText = counts
-    if(counts){
-      this.cardListEl.innerHTML = this.cardTemplate(Object.values(renderData));
-      const buttonTemplate = `<div id="top-btn">Back to Top &#x2191</div>`
-      this.cardListEl.insertAdjacentHTML('afterend', buttonTemplate);
-      $on(qs('#top-btn'), "click", e => this.handleTopBtnClicked(e));
-    }
-    else qs('#top-btn').remove()
+    this.cardListEl.innerHTML = this.cardTemplate(Object.values(renderData));
+    $on(qs('#top-btn'), "click", e => this.handleTopBtnClicked(e));
   }
   handleTopBtnClicked(){
-    
     animations.scrollTop(window, 0, 2)
   }
 }
