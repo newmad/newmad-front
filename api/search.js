@@ -7,7 +7,7 @@ const requestSearch = (keyword, callback) => {
 
   requestGET(`http://188.166.232.232:8080/${requestRoute}?id=${keyword}`, (status, resData) => {
     resData = JSON.parse(resData);
-    
+
     if(status) {
       console.log(resData);
       callback(true, resData);
