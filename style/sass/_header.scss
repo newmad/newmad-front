@@ -1,28 +1,9 @@
-body {
-  margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
-}
-
 .header__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding-left: 114px;
-  padding-right: 114px;
+  @include padding-side($size-3);
   box-sizing: border-box;
   border-bottom: 1px solid #ced3d6;
 }
@@ -45,18 +26,17 @@ li {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-bottom: 1px #ced3d6;
-  border-top: 1px #ced3d6;
-}
-
-.header__form input {
-  width: 545px;
-  height: 66px;
-  border-radius: 33px;
-  border: solid 2px #e1e4e6;
-  box-sizing: border-box;
-  padding-left: 65px;
-  font-size: 20px;
+  border-bottom: 1px#ced3d6;
+  border-top: 1px#ced3d6;
+  & input {
+    width: 545px;
+    height: 66px;
+    border-radius: 33px;
+    border: solid 2px #e1e4e6;
+    box-sizing: border-box;
+    padding-left: 65px;
+    font-size: 20px;
+  }
 }
 
 .search-button {
@@ -68,11 +48,3 @@ li {
   top: 19px;
   border: none;
 }
-
-.wrapper {
-  padding-left: 114px;
-  padding-right: 114px;
-  box-sizing: border-box;
-}
-
-/*# sourceMappingURL=app.css.map */
