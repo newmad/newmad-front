@@ -2,16 +2,26 @@ import { $on, qs } from "../helper/helper.js";
 import { dummyCardData } from "../template/dummyData.js";
 
 class CardList {
-  constructor({ cardListSelector, cardTemplate }) {
+  constructor({ cardListSelector, cardTemplate, ajax, url }) {
+    Object.assign(this, { cardTemplate, ajax, url });
     this.cardListEl = qs(cardListSelector);
-    this.cardTemplate = cardTemplate;
     this.init();
   }
   init() {
-    this.render();
+    this.ajax(this.url, this.getData.bind(this));
   }
-  render() {
-    this.cardListEl.innerHTML = this.cardTemplate(dummyCardData);
+  bindEvents() {
+    $on(this.cardListEl, "click", e => this.handleCliked(e));
+  }
+  handleCliked({ target }) {
+    console.log({ target });
+  }
+  getData(isSuccess, data) {
+    if (isSuccess) this.render(JSON.parse(data));
+  }
+  render(data) {
+    const renderData = Object.values(data);
+    this.cardListEl.innerHTML = this.cardTemplate(Object.values(renderData));
   }
 }
 
