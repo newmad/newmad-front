@@ -2,6 +2,7 @@ import '../style/sass/app.scss';
 import weather from '../api/weather';
 
 import {$on} from "./helper/helper.js";
+import Controller from './Controller/Controller.js';
 import CardList from "./View/CardList.js";
 import FormView from "./View/FormView.js";
 import {cardTemplate} from "./template/cardTemplate.js";
@@ -29,13 +30,26 @@ const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, ic
 $on(document, "DOMContentLoaded", () => {
   const cardList = new CardList({
     cardListSelector: ".card-list",
+    countSelector: '.card-counts',
     cardTemplate,
     ajax: requestGET,
-    placeUrl: URL.place,
+    url: URL
   });
-  // const form = new FormView({
-  //   'form__wrapper'
-  // })
+
+  
+
+  const form = new FormView({
+    wrapperSelector: 'form__wrapper',
+    searchInputSelector: '.search-input',
+    searchFormSelector: '.search__form',
+    ajax: requestGET,
+    url: URL,
+  })
+
+  const controller =  new Controller({
+    cardList,
+    form,
+  })
 });
 
 const querySelector = document.querySelector.bind(document);

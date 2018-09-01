@@ -11,13 +11,13 @@
 <body>
   <header class="header">
     <nav class="header__navigation">
-      <h2 class="header__nav">서비스 이름 </h2>
-      <a class="navigation-btn">장소 제보하기</a>
+      <img src="assets/images/logo-npc.png" style="width: 162px; height: 23px; cursor: pointer;" onclick="window.open('../', '_self')">
+      <a target="_blank"  href="https://goo.gl/forms/IyQRJOzNcqaOYZz72" class="navigation-btn">장소 제보하기</a>
     </nav>
     <div class="form__wrapper">
       <h2 class="header__weather-comment">오늘 날씨 so Hot :D </h2>
-      <form class="header__form">
-        <input type="text" placeholder="오늘 갈 장소를 검색해보세요" maxlength="25">
+      <form class="search__form">
+        <input class="search-input" type="text" placeholder="오늘 갈 장소를 검색해보세요" maxlength="25">
         <button class="search-button"></button>
       </form>
     </div>
@@ -34,7 +34,7 @@
     <ul class="weather__list"></ul>
   </div>
   <div class="card-list__wrapper">
-    <h2 class="card-list-title">전체 140개 리스트</h2>
+    <h2 class="card-list-title">전체 <span class="card-counts">140</span> 개 의 핫 플레이스:D</h2>
     <ul class="card-list"></ul>
   </div>
 

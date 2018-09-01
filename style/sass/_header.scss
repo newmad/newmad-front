@@ -8,6 +8,12 @@
   border-bottom: 1px solid #ced3d6;
 }
 
+.header__navigation {
+  & a, img {
+    cursor: pointer;
+  }
+}
+
 .navigation-btn {
   font-size: 17px;
   font-weight: bold;
@@ -32,7 +38,7 @@
   margin-bottom: 22px;
 }
 
-.header__form {
+.search__form {
   position: relative;
   display: flex;
   justify-content: center;
