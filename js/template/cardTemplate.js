@@ -11,7 +11,7 @@ export const cardTemplate = cardArr => {
           <p class="desc-time"> ${c.holiday}</p>
           <p class="desc-phone">${c.phone}</p>
           <button data-like="like" class="like-button">❤️
-            <span id="likeId-${c.id}" data-like="like" class="like-count">${c.like}</span>
+            <span id="likeId-${c.id}" data-counts="${c.like}" data-like="like" class="like-count">${c.like}</span>
           </button>
         </div>
       </div>

@@ -8,6 +8,7 @@ class CardList {
     Object.assign(this, { cardTemplate, ajax, url });
     this.cardListEl = qs(cardListSelector);
     this.countsEl = qs(countSelector);
+    this.rollBackBtn = null;
     this.init();
   }
   init() {
@@ -20,16 +21,27 @@ class CardList {
   handleCliked({ target }) {
     const listItem = target.closest('li')
     const id = listItem.id;
-    if(target.dataset.like ==='like') return this.handleLikeBtn(id)
+    const updatedBtn = qs(`#likeId-${id}`, this.cardListEl)
+    if(target.dataset.like ==='like') return this.handleLikeBtn(id, updatedBtn)
     else window.open(`/detail.html?id=${id}`)
   }
-  handleLikeBtn(id){
+  handleLikeBtn(id, updatedBtn){
+    this.updatedBtnTxt(updatedBtn)
     this.ajax(`${this.url.like}?keyword=${id}`, this.updateLike.bind(this))
   }
+  updatedBtnTxt(updatedBtn){
+    const likeCounts = Number(updatedBtn.dataset.counts)+1
+    updatedBtn.innerText = likeCounts;
+    updatedBtn.dataset.counts = likeCounts;
+    this.rollBackBtn = updatedBtn
+  }
   updateLike(isSuccess, data){
-    const {id, like} = JSON.parse(data)
-    const updatedBtn = qs(`#likeId-${id}`, this.cardListEl)
-    updatedBtn.innerText = like;
+    if(!isSuccess) this.rollBackBtnTxt()
+    this.rollBackBtn = null;
+  }
+  rollBackBtnTxt(){
+    this.rollBackBtn.innerText =  Number(updatedBtn.dataset.counts)-1;
+    updatedBtn.dataset.counts = Number(updatedBtn.dataset.counts)-1;
   }
   getData(isSuccess, data) {
     if (isSuccess) this.render(JSON.parse(data));
