@@ -52,7 +52,8 @@
 
 .search-button {
   position: absolute;
-  background: url('../../assets/images/search-icon.png');
+  background: url('../../assets/images/search-icons.svg') no-repeat center;
+  background-size: 30px 30px;
   width: 30px;
   height: 30px;
   left: 23px;

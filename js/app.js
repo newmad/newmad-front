@@ -1,12 +1,12 @@
 import '../style/sass/app.scss';
 import weather from '../api/weather';
 
-import { $on } from "./helper/helper.js";
+import {$on} from "./helper/helper.js";
 import CardList from "./View/CardList.js";
 import FormView from "./View/FormView.js";
-import { cardTemplate } from "./template/cardTemplate.js";
-import { requestGET } from "../api/common.js";
-import { URL } from "./URL.js";
+import {cardTemplate} from "./template/cardTemplate.js";
+import {requestGET} from "../api/common.js";
+import {URL} from "./URL.js";
 
 // 아이콘 이미지
 import iconTooSunny from '../assets/images/icon-too-sunny.png';
@@ -36,20 +36,25 @@ const querySelector = document.querySelector.bind(document);
 const weatherList = querySelector(".weather__list");
 const weatherItemTemplate = querySelector(".weather__item--template");
 
-const weatherMap = {
-  "너무 더운 날": iconTooSunny,
-  "너무 추운 날": iconTooCold,
-  "폭설 오는 날": iconTooSnowy,
-  "강풍 부는 날": iconTooWindy,
-  "폭우 오는 날": iconTooRainy,
-  "화창한 날": iconSunny,
-  "보슬비 오는 날": iconMist,
-  "비 오는 날": iconRainy,
-  "뇌우": iconStorm,
-  "미세먼지": iconDust,
-};
+
+const weatherIconList = [
+  undefined,
+  iconTooSunny,
+  iconTooRainy,
+  iconTooSnowy,
+  iconTooWindy,
+  iconDust,
+  iconSunny,
+  iconTooCold,
+  iconTooWindy,
+  iconStorm,
+  iconTooCold,
+  iconTooSunny,
+  iconRainy
+];
 
 weather((status, resData) => {
+  console.log(resData);
   for (let i = 0, len = resData.length; i < len; i += 1) {
     const weatherItem = resData[i];
 
@@ -58,12 +63,12 @@ weather((status, resData) => {
     const weatherItemImg = weatherItemTemplateClone.querySelector(".weather__item--img");
 
     weatherItemTitle.textContent = weatherItem;
-    weatherItemImg.src = weatherMap[weatherItem];
+    weatherItemImg.src = weatherIconList[i];
 
     weatherItemTemplateClone.hidden = false;
     weatherItemTemplateClone.classList.add("weather__item");
 
-    weatherItemTemplateClone.onclick = function(e) {
+    weatherItemTemplateClone.onclick = function (e) {
       alert(e.target.querySelector(".weather__item--title").textContent);
     };
 

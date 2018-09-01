@@ -1,4 +1,4 @@
-var API_URL = "";
+var API_URL = "http://188.166.232.232:8080/";
 
 var MESSAGE_SYS_FAIL = "접근에 실패했습니다.";
 var MESSAGE_NETWORK_FAIL = "인터넷 환경을 확인해주세요.";
