@@ -4,9 +4,10 @@ import { dummyCardData } from "../template/dummyData.js";
 
 
 class CardList {
-  constructor({ cardListSelector, cardTemplate, ajax, url }) {
+  constructor({ cardListSelector,countSelector, cardTemplate, ajax, url}) {
     Object.assign(this, { cardTemplate, ajax, url });
     this.cardListEl = qs(cardListSelector);
+    this.countsEl = qs(countSelector);
     this.init();
   }
   init() {
@@ -35,7 +36,7 @@ class CardList {
   }
   render(data) {
     const renderData = Object.values(data);
-    console.dir(renderData);
+    this.countsEl.innerText = renderData.length;
     this.cardListEl.innerHTML = this.cardTemplate(Object.values(renderData));
   }
 }

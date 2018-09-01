@@ -9,6 +9,7 @@ import { URL } from "./URL.js";
 $on(document, "DOMContentLoaded", () => {
   const cardList = new CardList({
     cardListSelector: ".card-list",
+    countSelector: '.card-counts',
     cardTemplate,
     ajax: requestGET,
     url: URL
