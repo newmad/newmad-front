@@ -173,3 +173,5 @@ function requestPUT(url, data, ackFunc) {
     };
   }
 }
+
+export {requestGET, requestPUT, requestDELETE, requestPOST};
