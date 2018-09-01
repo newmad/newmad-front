@@ -56,3 +56,19 @@
     margin-right: 0;
   }
 }
+
+.weather__item--active {
+  box-shadow: 0 1px 4px 0 rgba(41, 42, 43, 0.1);
+  background-color: #ffb85d;
+  border: solid 1px #e1e4e6;
+}
+
+.weather__item--active .weather__item--img {
+  background-color: rgba(255,255,255,.5); // Tint color
+  background-blend-mode: multiply;
+}
+
+.weather__item--active .weather__item--title {
+  color: white;
+  font-weight: bold;
+}

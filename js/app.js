@@ -58,13 +58,18 @@ weather((status, resData) => {
     weatherItemTemplateClone.hidden = false;
     weatherItemTemplateClone.classList.add("weather__item");
 
-    weatherItemTemplateClone.onclick = function (e) {
-      alert(e.target.querySelector(".weather__item--title").textContent);
+    weatherItemTemplateClone.onclick = () => {
+      document.querySelectorAll('.weather__item--active').forEach(other => {
+        other.classList.remove('weather__item--active');
+      });
+
+      weatherItemTemplateClone.classList.toggle('weather__item--active');
     };
 
     const weatherChild = document.createElement("LI");
     weatherChild.classList.add("weather__child");
     weatherChild.appendChild(weatherItemTemplateClone);
+
     weatherList.appendChild(weatherChild);
   }
 });
