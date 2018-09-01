@@ -6,7 +6,31 @@ var placeLikeNum = querySelector('.place__like--num');
 var placePicture = querySelector('.place__picture');
 var placeDescription = querySelector('.place__description');
 
-placeTitle.textContent = '오셜록 티뮤지엄';
-placeLocation.textContent = '제주특별자치도 서귀포시 안덕면';
-placeLikeNum.textContent = '12';
-placeDescription.textContent = '사진으로 다시 봐도 너무 좋은 해비치 밀리우 ㅠㅠ 최고의 다이닝이었어요! 박무현 셰프님이 계실때 먹었었는데.. 음식도 분위기도 서비스도..!! 사진이 많은데 일일이 설명 달며 그때의 감동을 재현하구 싶네요.. 정말 최고!';
+var placeAddress = querySelector('.place__info--address');
+var placePhone = querySelector('.place__info--phone');
+var placeHoliday = querySelector('.place__info--holiday');
+var placePrice = querySelector('.place__info--price');
+var placePark = querySelector('.place__info--park');
+var placeCategory = querySelector('.place__info--category');
+
+detail({}, function (status, resData) {
+  var title = Object.keys(resData)[0];
+  var obj = resData[title];
+
+  var {title, address, desc, img, like, category, holiday, parking, phone, price, id, 'weather-id' : weatherID} = obj;
+
+  placeTitle.textContent = title;
+  placeLocation.textContent = address;
+  placeLikeNum.textContent = like;
+  placeDescription.textContent = desc;
+  placePicture.src = img;
+
+  placeAddress.textContent = address;
+  placePhone.textContent = phone;
+  placeHoliday.textContent = holiday;
+  placePrice.textContent = price;
+  placePark.textContent = parking;
+  placeCategory.textContent = category;
+
+
+});
