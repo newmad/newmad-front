@@ -9,16 +9,22 @@ import {requestGET} from "../api/common.js";
 import {URL} from "./URL.js";
 
 // 아이콘 이미지
-import iconTooSunny from '../assets/images/icon-too-sunny.png';
-import iconTooCold from '../assets/images/too-cold.png';
-import iconTooSnowy from '../assets/images/icon-too-snowy.png';
-import iconTooWindy from '../assets/images/icon-too-windy.png';
-import iconTooRainy from '../assets/images/icon-too-rainy.png';
-import iconSunny from '../assets/images/icon-sunny.png';
-import iconMist from '../assets/images/icon-sunny.png';
-import iconRainy from '../assets/images/icon-rainy.png';
-import iconStorm from '../assets/images/icon-storm.png';
-import iconDust from '../assets/images/icon-dust.png';
+import icon0 from '../assets/images/icon-0.png'
+import icon1 from '../assets/images/icon-1.png'
+import icon2 from '../assets/images/icon-2.png'
+import icon3 from '../assets/images/icon-3.png'
+import icon4 from '../assets/images/icon-4.png'
+import icon5 from '../assets/images/icon-5.png'
+import icon6 from '../assets/images/icon-6.png'
+import icon7 from '../assets/images/icon-7.png'
+import icon8 from '../assets/images/icon-8.png'
+import icon9 from '../assets/images/icon-9.png'
+import icon10 from '../assets/images/icon-10.png'
+import icon11 from '../assets/images/icon-11.png'
+import icon12 from '../assets/images/icon-12.png'
+import icon13 from '../assets/images/icon-13.png'
+
+const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12, icon13];
 
 $on(document, "DOMContentLoaded", () => {
   const cardList = new CardList({
@@ -37,22 +43,6 @@ const weatherList = querySelector(".weather__list");
 const weatherItemTemplate = querySelector(".weather__item--template");
 
 
-const weatherIconList = [
-  undefined,
-  iconTooSunny,
-  iconTooRainy,
-  iconTooSnowy,
-  iconTooWindy,
-  iconDust,
-  iconSunny,
-  iconTooCold,
-  iconTooWindy,
-  iconStorm,
-  iconTooCold,
-  iconTooSunny,
-  iconRainy
-];
-
 weather((status, resData) => {
   console.log(resData);
   for (let i = 0, len = resData.length; i < len; i += 1) {
@@ -63,7 +53,7 @@ weather((status, resData) => {
     const weatherItemImg = weatherItemTemplateClone.querySelector(".weather__item--img");
 
     weatherItemTitle.textContent = weatherItem;
-    weatherItemImg.src = weatherIconList[i];
+    weatherItemImg.src = icons[i];
 
     weatherItemTemplateClone.hidden = false;
     weatherItemTemplateClone.classList.add("weather__item");
