@@ -8,6 +8,7 @@ import FormView from "./View/FormView.js";
 import {cardTemplate} from "./template/cardTemplate.js";
 import {requestGET} from "../api/common.js";
 import {URL} from "./URL.js";
+import search from '../api/search';
 
 // 아이콘 이미지
 import icon0 from '../assets/images/icon-0.png'
@@ -54,6 +55,11 @@ $on(document, "DOMContentLoaded", () => {
 
 const querySelector = document.querySelector.bind(document);
 const weatherList = querySelector(".weather__list");
+
+const cardListEL = querySelector('.card-list');
+const countEL = querySelector('.card-counts');
+
+
 const weatherItemTemplate = querySelector(".weather__item--template");
 
 
@@ -77,7 +83,14 @@ weather((status, resData) => {
         other.classList.remove('weather__item--active');
       });
 
+      // 날씨 태그 클릭 이벤트
       weatherItemTemplateClone.classList.toggle('weather__item--active');
+
+      search(i, (status, resData) => {
+        const renderData = Object.values(resData);
+        countEL.innerText = renderData.length;
+        cardListEL.innerHTML = cardTemplate(Object.values(renderData));
+      });
     };
 
     const weatherChild = document.createElement("LI");
