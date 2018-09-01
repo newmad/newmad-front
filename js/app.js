@@ -11,6 +11,10 @@ weather(function(status, resData){
     weatherItemTemplateClone.hidden = false;
     weatherItemTemplateClone.classList.add('weather__item');
 
+    weatherItemTemplateClone.onclick = function(e) {
+      alert(e.target.querySelector('.weather__item--title').textContent);
+    };
+
     var weatherChild = document.createElement('LI');
     weatherChild.classList.add('weather__child');
     weatherChild.appendChild(weatherItemTemplateClone);
