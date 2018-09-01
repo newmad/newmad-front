@@ -29,6 +29,8 @@ detail(id, (status, resData) => {
   placeTitle.textContent = title;
   placeLocation.textContent = address;
   placeLikeNum.textContent = like;
+  placeLikeNum.dataset.counts = like;
+  placeLikeNum.dataset.like = 'like';
   placeDescription.textContent = desc;
   placePicture.src = img;
 
@@ -40,3 +42,6 @@ detail(id, (status, resData) => {
   placeCategory.textContent = category;
 
 });
+
+
+
