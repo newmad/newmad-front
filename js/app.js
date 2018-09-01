@@ -9,7 +9,7 @@ import {cardTemplate} from "./template/cardTemplate.js";
 import {requestGET} from "../api/common.js";
 import {URL} from "./URL.js";
 import search from '../api/search';
-import snowTemplate from './template/snow.js'
+
 
 
 // 아이콘 이미지
@@ -30,6 +30,7 @@ import icon13 from '../assets/images/icon-13.png'
 
 import thunderStorm from './weatherBG/thunderstorm';
 import rainy from './weatherBG/rainy';
+import rainy from './weatherBG/snow';
 
 const icons = [icon0, icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10, icon11, icon12, icon13];
 

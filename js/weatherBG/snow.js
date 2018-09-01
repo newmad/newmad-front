@@ -1,4 +1,4 @@
-export const snowTemplate = `<div class="snow-container">
+export default`<div class="snow-container">
   <div class="snow foreground"></div>
   <div class="snow foreground layered"></div>
   <div class="snow middleground"></div>
@@ -6,3 +6,4 @@ export const snowTemplate = `<div class="snow-container">
   <div class="snow background"></div>
   <div class="snow background layered"></div>
 </div>`;
+
