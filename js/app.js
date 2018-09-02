@@ -140,17 +140,25 @@ weather((status, resData) => {
         }
       });
 
-      // 날씨 태그 클릭 이벤트
-      weatherItemTemplateClone.classList.toggle('weather__item--active');
-      weatherItemTemplateClone.style.background = colors[i];
-      weatherItemImg.src = iconWhites[i];
-      currentTag = i;
+      if (currentTag === i) {
+        weatherItemTemplateClone.classList.remove('weather__item--active');
+        weatherItemTemplateClone.style.background = "#fff";
+        weatherItemImg.src = icons[i];
+        currentTag = -1;
+      } else {
+        // 날씨 태그 클릭 이벤트
+        weatherItemTemplateClone.classList.toggle('weather__item--active');
+        weatherItemTemplateClone.style.background = colors[i];
+        weatherItemImg.src = iconWhites[i];
+        currentTag = i;
 
-      search(i, (status, resData) => {
-        const renderData = Object.values(resData);
-        countEL.innerText = renderData.length;
-        cardListEL.innerHTML = cardTemplate(Object.values(renderData));
-      });
+        search(i, (status, resData) => {
+          const renderData = Object.values(resData);
+          countEL.innerText = renderData.length;
+          cardListEL.innerHTML = cardTemplate(Object.values(renderData));
+        });
+      }
+
     };
 
     const weatherChild = document.createElement("LI");
