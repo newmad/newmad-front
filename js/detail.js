@@ -4,7 +4,7 @@ import {requestGET} from '../api/common.js';
 import {URL} from "./URL.js";
 const querySelector = document.querySelector.bind(document);
 
-const placeBtn = querySelector('.place__like--num');
+const placeBtn = querySelector('.place__like--btn');
 const placeTitle = querySelector('.place__title');
 const placeLocation = querySelector('.place__location');
 const placeLikeNum = querySelector('.place__like--num');
@@ -46,15 +46,13 @@ detail(id, (status, resData) => {
 });
 
 
-const rollBack = (btn)=>{
-  btn.innerText = Number(btn.innerText-1);
-  btn.dataset.counts = Number(counts-1);
-}
+
 
 placeBtn.addEventListener('click', ({target})=>{
-  const countsEl = querySelector('.place__like--num')
-  const counts = Number(countsEl.dataset.counts)+1;
-  countsEl.innerText = counts;
-  countsEl.dataset.counts = counts;
-  requestGET(`${URL.like}?keyword=${countsEl.dataset.id}`, ()=>{})
+
+  requestGET(`${URL.like}?keyword=${id}`, (status, resData)=>{
+
+    const counts = Number(placeLikeNum.textContent)+1;
+    placeLikeNum.innerText = counts;
+  });
 })
